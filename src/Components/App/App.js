@@ -9,7 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       searchResults: [{ name: 'name_1', artist: 'artist_1', album: 'album_1', id: 1 }, { name: 'name_2', artist: 'artist_2', album: 'album_2', id: 2 }, { name: 'name_3', artist: 'artist_3', album: 'album_3', id: 3}],
-      playlistTracks: [{ name: 'listName_1', artist: 'listArtist_1', album: 'listAlbum_1', id: 1 }, { name: 'listName_2', artist: 'listArtist_2', album: 'listAlbum_2', id: 2 }, { name: 'listName_3', artist: 'listArtist_3', album: 'listAlbum_3', id: 3}],
+      playlistTracks: [{ name: 'listName_1', artist: 'listArtist_1', album: 'listAlbum_1', id: 4 }, { name: 'listName_2', artist: 'listArtist_2', album: 'listAlbum_2', id: 5 }, { name: 'listName_3', artist: 'listArtist_3', album: 'listAlbum_3', id: 6}],
       playlistName: 'My favorite playList'
     };
 
@@ -18,7 +18,7 @@ class App extends React.Component {
 
   addTrack(track) {
     let tracks = this.state.playlistTracks;
-    if(tracks.id.includes(track.id)) {
+    if(tracks.find(savedTrack => savedTrack.id ===track.id)) {
       return;
     } else {
       tracks.push(track);
