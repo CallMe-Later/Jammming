@@ -14,6 +14,16 @@ class App extends React.Component {
     };
   }
 
+  addTrack(track) {
+    let tracks = this.state.playlistTracks;
+    if(tracks.id.includes(track.id)) {
+      return;
+    } else {
+      tracks.push(track);
+      this.setState({playlistTracks: tracks});
+    }
+  }
+
   render() {
   return (
     <div>
