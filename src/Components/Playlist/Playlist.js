@@ -4,6 +4,10 @@ import './Playlist.css';
 
 
 class Playlist extends React.Component {
+  handleNameChange(e) {
+    this.props.onNameChange(e.target.value);
+  }
+
   render() {
     return (
     <div className="Playlist">
