@@ -3,6 +3,10 @@ import './SearchBar.css';
 
 
 class SearchBar extends React.Component {
+  search() {
+    this.props.onSearch(this.props.term);
+  }
+
   render(){
     return (
     <div className="SearchBar">
